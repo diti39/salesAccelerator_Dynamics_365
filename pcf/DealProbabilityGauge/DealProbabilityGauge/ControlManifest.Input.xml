@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<manifest>
+  <control namespace="SalesAccelerator" constructor="DealProbabilityGauge" version="1.0.0"
+           display-name-key="Deal Probability Gauge" description-key="A bar gauge showing deal close probability"
+           control-type="standard">
+    <property name="probabilityValue" display-name-key="Probability" description-key="Bound field, 0-100"
+              of-type="Whole.None" usage="bound" required="true" />
+    <resources>
+      <code path="index.ts" order="1"/>
+      <css path="css/DealProbabilityGauge.css" order="1" />
+    </resources>
+  </control>
+</manifest>

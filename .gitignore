@@ -1,0 +1,19 @@
+# .NET / Visual Studio
+bin/
+obj/
+.vs/
+*.user
+*.suo
+packages/
+# Strong-name signing key: never commit
+*.snk
+*.pfx
+# Node / PCF build output
+node_modules/
+out/
+**/generated/
+# Power Platform CLI logs
+pac-log*.txt
+# OS / editor
+.DS_Store
+Thumbs.db
