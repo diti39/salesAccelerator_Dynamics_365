@@ -12,6 +12,9 @@ A hands-on Dynamics 365 Sales / Power Platform project covering lead qualificati
 4. **High-value deal flag.** A Power Automate flow fires when an Opportunity over 50,000 is created and writes an alert back onto the record.
 
 ![QualifyLead](screenshots/qualifylead.png)
+![QualifyLead](screenshots/qualifylead_dialog.png)
+![QualifyLead](screenshots/plugintrace.png)
+![QualifyLead](screenshots/flowrun.png)
 
 ## Where each skill shows up
 
@@ -59,7 +62,7 @@ sequenceDiagram
 └── pcf/DealProbabilityGauge/         # PCF project (TypeScript)
 ```
 
-## Setup
+<!-- ## Setup
 
 **Prerequisites:** a Dynamics 365 Sales environment with the Sales Hub app, Visual Studio 2022 (".NET desktop development" workload), Node.js, the Power Platform CLI (`winget install --id Microsoft.PowerAppsCLI -e`) and the Plugin Registration Tool.
 
@@ -71,18 +74,18 @@ Deploy in this order (details in `docs/`):
 4. Upload the web resources and wire the form events. See [04-web-resources](docs/04-web-resources.md).
 5. Add the command-bar button to the Lead form. See [04-web-resources](docs/04-web-resources.md).
 6. Build and push the PCF control. See [05-pcf-control](docs/05-pcf-control.md).
-7. Build the flow. See [06-power-automate-flow](docs/06-power-automate-flow.md).
+7. Build the flow. See [06-power-automate-flow](docs/06-power-automate-flow.md). -->
 
-## Design decisions
+<!-- ## Design decisions
 
 - **Validation at two layers.** Client JavaScript gives immediate feedback, and the plugin is the real enforcement point because anything that bypasses the form (API, import, flow) still hits it.
 - **Pre-image on Update.** An Update only carries changed columns, so the plugin reads the old Description from a pre-image when only the discount changed.
 - **Typed output parameters.** The action returns `NewOpportunityId` as an `EntityReference` and `QualifiedScore` as an integer, so the caller gets a usable record link instead of a bare GUID.
-- **Sandbox isolation.** Plugins are registered in Sandbox mode, as required in Dataverse online.
+- **Sandbox isolation.** Plugins are registered in Sandbox mode, as required in Dataverse online. -->
 
-## Problems I hit and how I fixed them
+<!-- ## Problems I hit and how I fixed them -->
 
-Most of the learning in this project came from things that broke. Highlights below; the full write-up with symptoms, causes and fixes is in **[docs/PROBLEMS-AND-FIXES.md](docs/PROBLEMS-AND-FIXES.md)**.
+<!-- Most of the learning in this project came from things that broke. Highlights below; the full write-up with symptoms, causes and fixes is in **[docs/PROBLEMS-AND-FIXES.md](docs/PROBLEMS-AND-FIXES.md)**.
 
 | Symptom                                                        | Root cause                                                                                                                               | Fix                                                                                                               |
 | -------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
@@ -93,7 +96,7 @@ Most of the learning in this project came from things that broke. Highlights bel
 | Field warning blocked saving even after typing a justification | The notification was only cleared when the discount dropped, and never re-checked on Description changes                                 | Warn only when discount > 15 **and** Description is empty; added an OnChange handler on Description               |
 | `Message Create does not support this image type`              | Pre-images don't exist on Create                                                                                                         | Registered the pre-image only on the Update step                                                                  |
 | Form changes never appeared                                    | Edited a Main form that was switched off, and tested in the wrong app                                                                    | Edited the active form and tested in Sales Hub                                                                    |
-| `pac pcf push` crashed with `XmlException`                     | Stray comment after `</manifest>` made the manifest invalid XML                                                                          | Removed it                                                                                                        |
+| `pac pcf push` crashed with `XmlException`                     | Stray comment after `</manifest>` made the manifest invalid XML                                                                          | Removed it                                                                                                        | -->
 
 ## Limitations and next steps
 
