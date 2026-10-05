@@ -7,12 +7,17 @@ A hands-on Dynamics 365 Sales / Power Platform project covering lead qualificati
 ## What it does
 
 1. **Qualify Lead button.** A command-bar button on the Lead form calls a custom action through the Web API. A C# plugin scores the lead (company size + budget + engagement) and, at a score of 6 or more, creates an Opportunity and opens it.
+   ![QualifyLead](screenshots/qualifylead.png)
+   ![QualifyLead](screenshots/qualifylead_dialog.png)
+
 2. **Discount governance.** Discounts over 15% need a justification in the Description. JavaScript gives instant feedback on the form, and a server-side plugin enforces the same rule for any save, including API calls and imports.
+   ![DiscountRule](screenshots/discountrule.png)
+
 3. **Deal probability gauge.** A custom PCF control (TypeScript) replaces the plain number box for _Deal Probability_ with a clickable red/amber/green bar.
+   ![DealGauge](screenshots/dealprobability_gauge.png)
+
 4. **High-value deal flag.** A Power Automate flow fires when an Opportunity over 50,000 is created and writes an alert back onto the record.
 
-![QualifyLead](screenshots/qualifylead.png)
-![QualifyLead](screenshots/qualifylead_dialog.png)
 ![QualifyLead](screenshots/plugintrace.png)
 ![QualifyLead](screenshots/flowrun.png)
 
