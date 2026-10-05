@@ -35,7 +35,7 @@ A hands-on Dynamics 365 Sales / Power Platform project covering lead qualificati
 
 ## Repository layout
 
-````
+```
 .
 ├── docs/                         # setup notes + PROBLEMS-AND-FIXES.md
 ├── plugins/SalesAccelerator.Plugins/
@@ -46,7 +46,9 @@ A hands-on Dynamics 365 Sales / Power Platform project covering lead qualificati
 │   ├── opportunity_form.js           # discount justification warning
 │   └── lead_ribbon_button.js         # calls the custom action
 └── pcf/DealProbabilityGauge/         # PCF project (TypeScript)
-```                                                                                           | -->
+```
+
+                                                                                           | -->
 
 ## Limitations and next steps
 
@@ -57,4 +59,3 @@ A hands-on Dynamics 365 Sales / Power Platform project covering lead qualificati
 - The flow only handles _new_ Opportunities. Catching an existing one that crosses 50,000 on update would need "Added or Modified" plus old/new value comparison. It writes an alert to the record rather than sending email or a Teams message, because the trial tenant had no mailbox for the Outlook connector.
 - The original declarative business rule ("Discount Justification Required") was deactivated once the JavaScript and plugin versions existed, so only one mechanism enforces each behaviour.
 - Not covered: SharePoint, Business Central or Azure integrations, and the Customer Service, Field Service and Marketing modules.
-````
