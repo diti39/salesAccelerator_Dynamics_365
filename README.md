@@ -8,7 +8,7 @@ A hands-on Dynamics 365 Sales / Power Platform project covering lead qualificati
 
 1. **Qualify Lead button.** A command-bar button on the Lead form calls a custom action through the Web API. A C# plugin scores the lead (company size + budget + engagement) and, at a score of 6 or more, creates an Opportunity and opens it.
    ![QualifyLead](screenshots/qualifylead.png)
-   ![QualifyLead](screenshots/qualifylead_dialog.png)
+   ![QualifyLeadDialog](screenshots/qualifylead_dialog.png)
 
 2. **Discount governance.** Discounts over 15% need a justification in the Description. JavaScript gives instant feedback on the form, and a server-side plugin enforces the same rule for any save, including API calls and imports.
    ![DiscountRule](screenshots/discountrule.png)
@@ -16,10 +16,10 @@ A hands-on Dynamics 365 Sales / Power Platform project covering lead qualificati
 3. **Deal probability gauge.** A custom PCF control (TypeScript) replaces the plain number box for _Deal Probability_ with a clickable red/amber/green bar.
    ![DealGauge](screenshots/dealprobability_gauge.png)
 
-4. **High-value deal flag.** A Power Automate flow fires when an Opportunity over 50,000 is created and writes an alert back onto the record.
+4. **High-value deal flag.** A Power Automate flow fires when an Opportunity over 50,000(Est.Revenue) is created and writes an alert back onto the record.
 
-![QualifyLead](screenshots/plugintrace.png)
-![QualifyLead](screenshots/flowrun.png)
+![PluginTrace](screenshots/plugintrace.png)
+![Flowrun](screenshots/flowrun.png)
 
 ## Where each skill shows up
 
@@ -32,23 +32,6 @@ A hands-on Dynamics 365 Sales / Power Platform project covering lead qualificati
 | PCF control in TypeScript                                                            | [pcf/](pcf/DealProbabilityGauge), [docs/05-pcf-control.md](docs/05-pcf-control.md)     |
 | Power Automate (Dataverse trigger, filter rows)                                      | [docs/06-power-automate-flow.md](docs/06-power-automate-flow.md)                       |
 | Debugging: plugin trace log, Plugin Registration Tool, Event Viewer, browser console | [docs/PROBLEMS-AND-FIXES.md](docs/PROBLEMS-AND-FIXES.md)                               |
-
-## Repository layout
-
-```
-.
-├── docs/                         # setup notes + PROBLEMS-AND-FIXES.md
-├── plugins/SalesAccelerator.Plugins/
-│   ├── DiscountValidationPlugin.cs   # Opportunity Create/Update (PreOperation)
-│   ├── LeadQualificationAction.cs    # new_QualifyLead custom action logic
-│   └── HelloWorldPlugin.cs           # smoke test used to validate the registration pipeline
-├── web-resources/
-│   ├── opportunity_form.js           # discount justification warning
-│   └── lead_ribbon_button.js         # calls the custom action
-└── pcf/DealProbabilityGauge/         # PCF project (TypeScript)
-```
-
-                                                                                           | -->
 
 ## Limitations and next steps
 
