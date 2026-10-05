@@ -23,15 +23,15 @@ A hands-on Dynamics 365 Sales / Power Platform project covering lead qualificati
 
 ## Where each skill shows up
 
-| Skill                                                                                | Where                                                                                  |
-| ------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------- |
-| Tables, columns, forms, business rules                                               | [docs/01-data-model.md](docs/01-data-model.md)                                         |
-| C# plugins: Pre/PostOperation, pre-images, Sandbox, tracing                          | [plugins/](plugins/SalesAccelerator.Plugins), [docs/02-plugins.md](docs/02-plugins.md) |
-| Custom action (definition + plugin implementation)                                   | [docs/03-custom-action.md](docs/03-custom-action.md)                                   |
-| JavaScript web resources, form events, Web API from the client                       | [web-resources/](web-resources), [docs/04-web-resources.md](docs/04-web-resources.md)  |
-| PCF control in TypeScript                                                            | [pcf/](pcf/DealProbabilityGauge), [docs/05-pcf-control.md](docs/05-pcf-control.md)     |
-| Power Automate (Dataverse trigger, filter rows)                                      | [docs/06-power-automate-flow.md](docs/06-power-automate-flow.md)                       |
-| Debugging: plugin trace log, Plugin Registration Tool, Event Viewer, browser console | [docs/PROBLEMS-AND-FIXES.md](docs/PROBLEMS-AND-FIXES.md)                               |
+| Skill                                                          | Where                                                                                  |
+| -------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| Tables, columns, forms, business rules                         | [docs/01-data-model.md](docs/01-data-model.md)                                         |
+| C# plugins: Pre/PostOperation, pre-images, Sandbox, tracing    | [plugins/](plugins/SalesAccelerator.Plugins), [docs/02-plugins.md](docs/02-plugins.md) |
+| Custom action (definition + plugin implementation)             | [docs/03-custom-action.md](docs/03-custom-action.md)                                   |
+| JavaScript web resources, form events, Web API from the client | [web-resources/](web-resources), [docs/04-web-resources.md](docs/04-web-resources.md)  |
+| PCF control in TypeScript                                      | [pcf/](pcf/DealProbabilityGauge), [docs/05-pcf-control.md](docs/05-pcf-control.md)     |
+| Power Automate (Dataverse trigger, filter rows)                | [docs/06-power-automate-flow.md](docs/06-power-automate-flow.md)                       |
+|  |
 
 ## Limitations and next steps
 
